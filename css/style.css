@@ -1,0 +1,977 @@
+/* Start Global Rules */
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+:root{
+    --mainColor:#0075ff;
+    --altColor:#0d69d5;
+    --orange-color: #f59e0b;
+    --green-color: #22c55e;
+    --red-color: #f44336;
+    --grey-color: #888;
+    --mainTransition:0.3s;
+    --bgColor:#eee;
+}
+/* End Global Rules */
+/* Start Side Bar */
+.mainPage{
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: 70px auto;
+    grid-template-areas: "side side head head head head head head head head"
+    "side side cont cont cont cont cont cont cont cont";
+    height: 100vh;
+}
+
+/* Start Side Bar */
+aside{
+    grid-area: side;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 30px;
+    min-width: 223px;
+    background-color: white;
+    box-shadow: 0 0 10px 0 rgba(0 0 0 /20%);
+}
+
+aside h3{
+    text-align: center;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+aside h3::before{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: black;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+aside h3::after{
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 5px solid white;
+    background-color: black;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+aside ul{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 10px;
+}
+
+aside ul li{
+    background-color: white;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+aside ul li:first-child{
+    background-color: #f6f6f6;
+}
+
+aside ul li:hover{
+    background-color: #f6f6f6;
+    transition: var(--mainTransition);
+}
+
+aside ul li i{
+    margin-right: 5px;
+}
+
+aside ul li a{
+    color: black;
+}
+/* End Side Bar */
+header{
+    grid-area: head;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header .search{
+    position: relative;
+}
+header .search input{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 8px;
+    width: 300px;
+    outline: none;
+    transition: width 0.3s linear;
+}
+
+header .search input:focus{
+    width: 100%;
+}
+
+header .mainPhoto{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap:15px;
+    position: relative;
+}
+
+header .mainPhoto::before{
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 0;
+    right: 40px;
+    background-color: var(--red-color);
+}
+
+header .mainPhoto img{
+    width: 30px;
+    height: 30px;
+}
+/* Start Header */
+/* Satrt Section */
+section{
+    grid-area: cont;
+    padding: 20px;
+    background-color: #ccc;
+}
+
+section .Title{
+    position: relative;
+}
+
+section .Title::before{
+    content: "";
+    position: absolute;
+    width: 150px;
+    height: 3px;
+    bottom: -10px;
+    background-image: linear-gradient(to right ,black 40% ,white 40%,white 100%);
+}
+
+section .blocks{
+    display: grid;
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+section .blocks .boxes{
+    background-color: white;
+    border-radius: 10px;
+    height: 400px;
+    overflow: hidden;
+    height: 400px;
+}
+
+section .blocks .boxes .one{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #eee;
+    padding: 20px;
+    border-radius: 10px 10px 0 0;
+}
+
+section .blocks .boxes .one .Welcome-part p{
+    color: #888;
+    padding: 10px 0;
+}
+
+section .blocks .boxes .personalImage{
+    position: relative;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+section .blocks .boxes .personalImage img{
+    width: 65px;
+    position: absolute;
+    top: -45px;
+    border: 5px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #ddd;
+}
+
+section .blocks .boxes .info-part{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #eee ;
+
+}
+
+section .blocks .boxes .info-part div p{
+    padding: 10px 0;
+    color: var(--grey-color);
+}
+
+section .blocks .boxes .profile{
+    text-align: end;
+    padding: 20px 20px 60px;
+    width: 100%;
+}
+
+section .blocks .boxes .profile a{
+    padding: 4px 8px;
+    font-size: 14px;
+    background-color: var(--mainColor);
+    border-radius: 6px;
+    color: white;
+}
+
+section .blocks .boxes .profile a:hover{
+    background-color: var(--altColor);
+    transition: var(--mainTransition);
+}
+
+/* Start Quick Draft */
+section .blocks .boxes .Quick-draft{
+    padding: 20px;
+
+}
+
+section .blocks .boxes .Quick-draft .Welcome-part p{
+    color: #888;
+    padding: 10px 0;    
+    margin-bottom: 10px;
+}
+
+section .blocks .boxes .Quick-draft .Welcome-part input{
+    border: none;
+    border-radius: 10px;
+    padding: 8px;
+    width: 100%;
+    background-color: #eee;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+section .blocks .boxes .Quick-draft .Welcome-part textarea{
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    background-color: #eee;
+    padding: 8px;
+    resize: none;
+    margin: 0;
+    outline: none;
+}
+
+section .blocks .boxes .save{
+    padding: 20px;
+    margin-top: -30px;
+    text-align: end;
+    width: 100%;
+}
+
+section .blocks .boxes .save a{
+    padding: 4px 8px;
+    font-size: 14px;
+    background-color: var(--mainColor);
+    border-radius: 6px;
+    color: white;
+}
+/* End Quick Draft */
+
+/* Start Yearly Targets */
+section .blocks .boxes .target{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+section .blocks .boxes .target .icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    position: relative;
+}
+
+section .blocks .boxes .target .onee{
+    background-color: rgb(0 117 255 / 20%);
+}
+
+section .blocks .boxes .target .onee i{
+    color: var(--mainColor);
+}
+
+section .blocks .boxes .target .twoo{
+    background-color: rgb(245 158 11 / 20%);
+}
+
+section .blocks .boxes .target .twoo i{
+    color:var(--orange-color) ;
+}
+
+section .blocks .boxes .target .threee{
+    background-color: rgb(34 197 94 / 20%);
+}
+
+section .blocks .boxes .target .threee i{
+    color:var(--green-color) ;
+}
+
+section .blocks .boxes .target .info{
+    flex: 1;
+    position: relative;
+}
+
+section .blocks .boxes .target .info p{
+    color: #888;
+}
+
+section .blocks .boxes .target .info h4{
+    padding: 10px 0;
+}
+
+section .blocks .boxes .target .info .rate{
+    position: relative;
+    height: 4px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+section .blocks .boxes .target .info .rate-color1{
+    background-color: rgb(0 117 255 / 20%);
+}
+
+section .blocks .boxes .target .info .rate-color2{
+    background-color: rgb(245 158 11 / 20%);
+}
+
+section .blocks .boxes .target .info .rate-color3{
+    background-color: rgb(34 197 94 / 20%); 
+}
+
+section .blocks .boxes .target .info .rate > span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+section .blocks .boxes .target .info .rate .bg-blue{
+    background-color: var(--mainColor);
+}
+
+section .blocks .boxes .target .info .rate .bg-orange{
+    background-color: var(--orange-color);
+}
+
+section .blocks .boxes .target .info .rate .bg-green{
+    background-color: var(--green-color);
+}
+
+
+section .blocks .boxes .target .info .rate > span span{
+    position: absolute;
+    right: -15px;
+    top: -35px;
+}
+
+section .blocks .boxes .target .info .rate > span span::before{
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 10px;
+    top: 25px;
+    right:10px;
+}
+
+section .blocks .boxes .target .info .rate > span .rate-one::before{
+    border-color: var(--mainColor) transparent transparent transparent;
+}
+
+section .blocks .boxes .target .info .rate > span .rate-one{
+    background-color: var(--mainColor);
+    padding: 4px;
+    border-radius: 6px;
+    color: white;
+}
+
+section .blocks .boxes .target .info .rate > span .rate-two::before{
+    border-color: var(--orange-color) transparent transparent transparent;
+}
+
+section .blocks .boxes .target .info .rate > span .rate-two{
+    background-color: var(--orange-color);
+    padding: 4px;
+    border-radius: 6px;
+    color: white;
+}
+
+
+section .blocks .boxes .target .info .rate > span .rate-three::before{
+    border-color: var(--green-color) transparent transparent transparent;
+}
+
+section .blocks .boxes .target .info .rate > span .rate-three{
+    background-color: var(--green-color);
+    padding: 4px;
+    border-radius: 6px;
+    color: white;
+}
+
+/* End Yearly Targets */
+/* Start Tickets Statistics */
+section .blocks .boxes .Tickets-Statistics{
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    /* grid-template-columns: repeat(auto-fill, minmax(200px ,1fr)); */
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px 20px;
+    text-align: center;
+}
+
+section .blocks .boxes .Tickets-Statistics .box-ticket{
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 10px;
+    max-height: 100%;
+}
+
+section .blocks .boxes .Tickets-Statistics .box-ticket h3{
+    padding: 5px 0;
+    font-size: 25px;
+}
+
+section .blocks .boxes .Tickets-Statistics .box-ticket p{
+    color: var(--grey-color);
+}
+section .blocks .boxes .Tickets-Statistics .total i{
+    color: var(--orange-color);
+}
+
+section .blocks .boxes .Tickets-Statistics .pending i{
+    color: var(--mainColor);
+}
+
+section .blocks .boxes .Tickets-Statistics .closed i{
+    color: var(--green-color);
+}
+
+section .blocks .boxes .Tickets-Statistics .deleted i{
+    color: var(--red-color);
+}
+/* End Tickets Statistics */
+/* Start Latest News */
+section .blocks .boxes .LatestNewSection{
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+    gap: 20px;
+}
+
+section .blocks .boxes .LatestNewSection img{
+    width: 100px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+section .blocks .boxes .LatestNewSection .info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+}
+
+section .blocks .boxes .LatestNewSection .info .text h3{
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+section .blocks .boxes .LatestNewSection .info .text p{
+    font-size: 13px;
+    color: var(--grey-color);
+}
+
+section .blocks .boxes .LatestNewSection .info .days{
+    width: fit-content;
+    background-color: #eee;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* End Latest News */
+/* Start Latest Tasks */
+section .blocks .boxes .LatestTasks{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+section .blocks .boxes .LatestTasks .text h3{
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+section .blocks .boxes .LatestTasks .text p{
+    font-size: 13px;
+    color: var(--grey-color);
+}
+
+section .blocks .boxes .LatestTasks i:hover{
+    color: var(--red-color);
+    transition: var(--mainTransition);
+}
+/* End Latest Tasks */
+/* Start Top Search Items */
+section .blocks .boxes .TopSearchItems{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+section .blocks .boxes .TopSearchItems .change-font{
+    color: var(--grey-color);
+}
+
+section .blocks .boxes .TopSearchItems .bg{
+    background-color: #eee;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+/* End Top Search Items */
+/* Start Latest Uploads */
+section .blocks .boxes .LatestUploads{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0;
+}
+
+section .blocks .boxes .LatestUploads img{
+    width: 40px;
+}
+
+section .blocks .boxes .LatestUploads .files{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+}
+
+section .blocks .boxes .LatestUploads .files .text span{
+    color: var(--grey-color);
+}
+
+section .blocks .boxes .LatestUploads .files .sty-bg{
+    background-color: #eee;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+/* End Latest Uploads */
+/* Start Last Project Progress */
+section .blocks .boxes .LastProjectProgress{
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+section .blocks .boxes .LastProjectProgress .circle{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid var(--mainColor);
+    position: relative;
+}
+
+section .blocks .boxes .LastProjectProgress .circle span{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--mainColor);
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+section .blocks .boxes .LastProjectProgress .circle .flash{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: white;
+    width: 100%;
+    border-radius: 50%;
+    border: 2px solid white;
+    animation: pulse 1.5s ease infinite;
+}
+
+@keyframes pulse {
+    0%{
+        background-color: white;
+    }
+    100%{
+        background-color: var(--mainColor);
+    }
+}
+
+section .blocks .boxes .LastProjectProgress .circle .line{
+    position: absolute;
+    height: 42px;
+    width: 2px;
+    border: none;
+    border-radius: 0%;
+    left: 10px;
+    top: 22px;
+    background-color: var(--mainColor);
+}
+/* End Last Project Progress */
+/* Start Reminders */
+section .blocks .boxes .Reminders{
+    padding: 20px 0;
+}
+
+section .blocks .boxes .Reminders ul{
+    position: relative;
+}
+
+section .blocks .boxes .Reminders ul li{
+    display: flex;
+    align-items: center;
+    padding: 15px 0 ;
+    gap: 30px;
+}
+section .blocks .boxes .Reminders ul li > span{
+    position: relative;
+}
+
+section .blocks .boxes .Reminders ul li > span::before{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: red;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+section .blocks .boxes .Reminders ul li .One::before{
+    background-color: var(--mainColor);
+}
+
+section .blocks .boxes .Reminders ul li .two::before{
+    background-color: var(--green-color);
+}
+section .blocks .boxes .Reminders ul li .three::before{
+    background-color: var(--orange-color);
+}
+section .blocks .boxes .Reminders ul li .foue::before{
+    background-color: var(--red-color);
+}
+
+section .blocks .boxes .Reminders ul li .text{
+    height: 100%;
+    padding: 0 15px;
+}
+
+section .blocks .boxes .Reminders ul li .blue-line{
+    border-left: 2px solid var(--mainColor);
+}
+
+section .blocks .boxes .Reminders ul li .green-line{
+    border-left: 2px solid var(--green-color);
+}
+
+section .blocks .boxes .Reminders ul li .orange-line{
+    border-left: 2px solid var(--orange-color);
+}
+
+section .blocks .boxes .Reminders ul li .red-line{
+    border-left: 2px solid var(--red-color);
+}
+
+section .blocks .boxes .Reminders ul li .text p{
+    padding: 5px;
+}
+
+section .blocks .boxes .Reminders ul li .text span{
+    padding: 5px;
+    font-size: 13px;
+    color: var(--grey-color);
+}
+/* End Reminders */
+/* Start Latest Post */
+section .blocks .boxes .latestPost{
+    padding: 20px 0;
+}
+
+section .blocks .boxes .latestPost .post{
+    display:flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+section .blocks .boxes .latestPost .post .info p{
+    padding: 5px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+section .blocks .boxes .latestPost .paragraph{
+    padding:30px 0 30px ;
+    border-bottom: 1px solid #eee;
+    line-height: 2;
+}
+
+section .blocks .boxes .latestPost .like-comments{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+section .blocks .boxes .latestPost .like-comments i , span{
+    color: var(--grey-color);
+}
+
+section .blocks .boxes .latestPost .like-comments .like i:hover{
+    color: var(--red-color);
+    transition: var(--mainTransition);
+}
+
+section .blocks .boxes .latestPost .like-comments .comments i:hover{
+    color: var(--mainColor);
+    transition: var(--mainTransition);
+}
+/* End Latest Post */
+/* Start Social Media Stats */
+section .blocks .boxes .SocialMediaStats{
+    padding: 20px 0;
+}
+
+section .blocks .boxes .SocialMediaStats .stats{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px ;
+}
+
+section .blocks .boxes .SocialMediaStats .bg-blue1{
+    background-color: rgb(29 161 242 / 20%);
+}
+
+section .blocks .boxes .SocialMediaStats .bg-blue2{
+    background-color: rgb(24 119 242 / 20%);
+}
+
+section .blocks .boxes .SocialMediaStats .bg-red{
+    background-color:rgb(255 0 0 / 20%);
+}
+
+section .blocks .boxes .SocialMediaStats .bg-blue3{
+    background-color:rgb(0 119 181 / 20%);
+}
+
+section .blocks .boxes .SocialMediaStats .stats .icon{
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .blocks .boxes .SocialMediaStats .stats .icon:hover{
+    transform: rotate(5deg);
+    transition: var(--mainTransition);
+}
+
+section .blocks .boxes .SocialMediaStats .stats .icon i{
+    color: white;
+}
+
+section .blocks .boxes .SocialMediaStats .stats .blue{
+    background-color: #1da1f2;
+}
+
+section .blocks .boxes .SocialMediaStats .stats .blue-light{
+    background-color: #1877f2;
+}
+
+section .blocks .boxes .SocialMediaStats .stats .red{
+    background-color: #ff0000;
+}
+
+section .blocks .boxes .SocialMediaStats .stats .green{
+    background-color:#0077b5;
+}
+
+section .blocks .boxes .SocialMediaStats .stats .info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 1;
+    padding: 0 10px;
+}
+
+section .blocks .boxes .SocialMediaStats .bg-blue1 .info p{
+    color:#1da1f2 ;
+}
+
+section .blocks .boxes .SocialMediaStats .bg-blue2 .info p{
+    color:#1877f2 ;
+}
+
+section .blocks .boxes .SocialMediaStats .bg-red .info p{
+    color:#ff0000 ;
+}
+
+section .blocks .boxes .SocialMediaStats .bg-blue3 .info p{
+    color:#0077b5 ;
+}
+
+section .blocks .boxes .SocialMediaStats .stats .info a{
+    color: white;
+    width: fit-content;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+section .blocks .boxes .SocialMediaStats .bg-blue1 .info a{
+    background-color:#1da1f2 ;
+}
+
+section .blocks .boxes .SocialMediaStats .bg-blue2 .info a{
+    background-color:#1877f2 ;
+}
+
+section .blocks .boxes .SocialMediaStats .bg-red .info a{
+    background-color:#ff0000 ;
+}
+
+section .blocks .boxes .SocialMediaStats .bg-blue3 .info a{
+    background-color:#0077b5 ;
+}
+
+/* End Social Media Stats */
+/* Start Project */
+section .project{
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+section .project .responsiveTable{
+    overflow-x: auto;
+}
+
+section .project table{
+    /* width: 100%; */
+    margin-top: 20px;
+    border-collapse: collapse;
+    border: 1px solid #eee;
+    min-width: 995px;
+}
+
+section .project table thead tr th{
+    background-color: #eee;
+    text-align: left;
+    padding:10px;
+}
+
+section .project table tr td{
+    text-align: left;
+    padding:10px;
+    border-left: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+section .project table tr td:hover{
+    background-color: #eee;
+    transition: 0.1s;
+}
+
+section .project table tr .imgs img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    padding: 2px;
+}
+
+section .project table tr .imgs img:not(:first-child){
+    margin-left: -25px;
+}
+
+section .project table tr .case-stats{
+    color: white;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+
+section .project table tr .bg1{
+    background-color: var(--orange-color);
+}
+
+section .project table tr .bg2{
+    background-color: var(--mainColor);
+}
+
+section .project table tr .bg3{
+    background-color: var(--green-color);
+}
+
+section .project table tr .bg4{
+    background-color: var(--red-color);
+}
+/* End Project */
+/* End Section */
+/* End Side Bar */
